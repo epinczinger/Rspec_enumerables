@@ -114,13 +114,8 @@ module Enumerable
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-end # end of module
+end
 
 def multiply_els(arr)
   arr.inject(:*)
 end
-
-square = Proc.new {|x| x**2 }
-p (1..5).my_map(square)
-var = :*
-p var.class

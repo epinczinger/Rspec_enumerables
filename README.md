@@ -1,20 +1,33 @@
-# Enumerables
+# Rspec_testing
 
-The goal of this project was to duplicate some Enumerable class methods in order to learn about how to create methods inside classes.
+Learning about rspec, applying into previous Enumerables project.
 
-## Output
-```ruby
-Input
+## Built With
+​
+Ruby 2.6.5
 
-my_numbers = [5 ,6, 7, 8]
-my_numbers.my_inject {|sum, number| sum + number}
+## Getting Started
 
-Output
+​To get a local copy up and running follow these simple example steps.​ 
 
-> 26
-```
+``` 
+Git clone git@github.com:epinczinger/Rspec_enumerables.git
+``` 
 
-## Demo Link
+## RUN TEST
+
+To run the Rspec and check for testing cases write the following command on the root folder.
+
+```ruby 
+rspec 
+``` 
+
+## Screenshot
+
+![screenshot](/images/screenshot.png)
+
+
+## Demo Link of Enumerables Project
 
 [Live Demo Link](https://repl.it/@EliasCastaneda/Enumerables).
 
@@ -26,11 +39,11 @@ Output
 
 ## Authors
 
-👤 **Elias Castañeda**
+👤 **Esteban Pinczinger**
 
-- Github: [@e71az](https://github.com/e71az)
-- Twitter: [@e71az](https://twitter.com/e71az)
-- Linkedin: [linkedin](https://www.linkedin.com/in/elias-casta%C3%B1eda-17a771115/)
+- Github: [epinczinger](https://github.com/epinczinger)
+- Twitter: [@epinczinger](https://twitter.com/epinczinger)
+- Linkedin: [Esteban-Pinczinger](https://www.linkedin.com/in/esteban-pinczinger-busai-ab49a254/)
 
 👤 **Jessica Farias**
 
@@ -43,7 +56,7 @@ Output
 To get a local copy up and running follow these simple example steps.
 
 1. Open the terminal comand line window
-2. `git clone https://github.com/e71az/Enumerables.git`
+2. `git clone https://github.com/epinczinger/Rspec_enumerables.git`
 3. Open the spec folder and execute the bubble_spec.rb script
 4. Enjoy!
 
@@ -51,7 +64,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [Issue page](https://github.com/e71az/Enumerables/issues).
+Feel free to check the [issues page](issues/).
 
 ## Show your support
 
