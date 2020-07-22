@@ -114,7 +114,7 @@ module Enumerable
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
-end#end of module
+end # end of module
 
 def multiply_els(arr)
   arr.inject(:*)
