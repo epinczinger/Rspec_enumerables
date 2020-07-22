@@ -22,6 +22,7 @@ Output
 
 - Ruby
 - Rubocop
+- Rspec
 
 ## Authors
 

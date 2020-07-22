@@ -119,3 +119,8 @@ end # end of module
 def multiply_els(arr)
   arr.inject(:*)
 end
+
+square = Proc.new {|x| x**2 }
+p (1..5).my_map(square)
+var = :*
+p var.class

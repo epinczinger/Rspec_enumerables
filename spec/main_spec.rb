@@ -83,7 +83,7 @@ describe Enumerable do
       expect([nil, true, 99].my_any?(Integer)).to eql([nil, true, 99].any?(Integer))
     end
 
-    it 'compares .my_any with .any with a Regex as argument' do
+    it 'compares .my_any with .any with a Regexp as argument' do
       expect(%w[ant bear cat].my_any?(/d/)).to eql(%w[ant bear cat].any?(/d/))
     end
 
@@ -93,6 +93,65 @@ describe Enumerable do
 
     it 'compares .my_any with .any on an empty array' do
       expect([].my_any?).to eql([].any?)
+    end
+  end
+
+  describe '#my_none'do
+    it 'compares .my_none with .none on a array with a block' do
+      expect(%w{ant bear cat}.my_none? { |word| word.length == 5 }).to eql(%w{ant bear cat}.none? { |word| word.length == 5 })
+    end
+
+    it 'compares .my_none with .none on a array with Regexp as argument' do
+      expect(%w{ant bear cat}.my_none?(/d/)).to eql(%w{ant bear cat}.none?(/d/))
+    end
+
+    it 'compares .my_none with .none on a array with Class as argument' do
+      expect([1, 3.14, 42].my_none?(Float)).to eql([1, 3.14, 42].none?(Float))
+    end
+
+    it 'compares .my_none with .none on an empty array' do
+      expect([].my_none?).to eql([].none?)
+    end
+  end
+
+  describe '#my_count' do
+    ary = [1, 2, 4, 2]
+    it 'compares .my_count with .none on array' do
+      expect(ary.my_count).to eql(ary.count)
+    end
+    it 'compares .my_count with .none with a number as argument' do
+      expect(ary.count(2)).to eql(ary.count(2))
+    end
+    it 'compares .my_count with .none with a block' do
+      expect(ary.count{ |x| x%2==0 }).to eql(ary.count{ |x| x%2==0 })
+    end
+    it 'compares .my_count with .none on a range' do
+      expect((1..5).my_count).to eql((1..5).count)
+    end
+  end
+
+  describe '#my_map' do 
+    it 'compares .my_map with .none on a range' do
+      expect((1..4).my_map { |i| i*i } ).to eql((1..4).map { |i| i*i } )
+    end
+
+    it 'Verifies my_map takes a Proc as argument' do
+      square = Proc.new {|x| x**2 }
+      expect((1..5).my_map(square)).to eql([1, 4, 9, 16, 25])
+    end
+  end
+
+  describe "#my_inject" do
+    it 'compares .my_inject with .inject using a block over range' do
+      expect((5..10).my_inject { |sum, n| sum + n }).to eql((5..10).inject { |sum, n| sum + n })
+    end
+
+    it 'compares .my_inject with .inject using a number and symbol as arguments' do
+      expect((5..10).my_inject(1, :*)).to eql((5..10).inject(1, :*))
+    end
+
+    it 'compares .my_inject with .inject using a block over string array' do
+      expect( %w[cat sheep bear].my_inject { |m, w| m.length > w.length ? m : w}).to eql(%w[cat sheep bear].inject { |m, w| m.length > w.length ? m : w})
     end
   end
 end
